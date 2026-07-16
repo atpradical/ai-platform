@@ -8,7 +8,6 @@ import { ChatOpenAI } from '@langchain/openai';
 @Module({
   controllers: [AiController],
   providers: [
-    AiService,
     {
       provide: CHAT_MODEL,
       inject: [ConfigService],
@@ -19,6 +18,7 @@ import { ChatOpenAI } from '@langchain/openai';
         });
       },
     },
+    AiService,
   ],
 })
 export class AiModule {}
