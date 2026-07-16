@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { RagModule } from './rag/rag.module';
 import { AgentModule } from './agent/agent.module';
+import { GraphModule } from './graph/graph.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -20,6 +21,7 @@ import { AgentModule } from './agent/agent.module';
     RagModule,
     AiModule,
     AgentModule,
+    GraphModule,
   ],
   controllers: [AppController],
   providers: [AppService],
