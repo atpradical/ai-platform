@@ -57,4 +57,13 @@ export class AiService {
     console.log('model answer:', JSON.stringify(parsed, null, 2));
     return parsed;
   }
+
+  async streamAnswer(question: string) {
+    const template = ChatPromptTemplate.fromTemplate(
+      'Shortly answer the question: {question}.',
+    );
+
+    const chain = template.pipe(this.model);
+    return chain.stream({ question });
+  }
 }
