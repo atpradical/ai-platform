@@ -5,7 +5,7 @@ import { AiModule } from './ai/ai.module';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { RagModule } from './rag/rag.module';
-
+import { AgentModule } from './agent/agent.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -19,6 +19,7 @@ import { RagModule } from './rag/rag.module';
     ]),
     RagModule,
     AiModule,
+    AgentModule,
   ],
   controllers: [AppController],
   providers: [AppService],

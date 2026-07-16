@@ -20,5 +20,6 @@ import { ChatOpenAI } from '@langchain/openai';
     },
     AiService,
   ],
+  exports: [AiService, CHAT_MODEL],
 })
 export class AiModule {}
